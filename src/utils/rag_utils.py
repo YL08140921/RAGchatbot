@@ -14,19 +14,19 @@ logger = logging.getLogger(__name__)
 
 def init_azure_search():
     """
-    azureの検索サービスのクライアントを作成するよ
+    azureの検索サービスのクライアントを作成
     Returns:
         search_client (SearchClient): azureの検索サービスのクライアント
     """
     assert (
         "AZURE_AI_SEARCH_ENDPOINT" in os.environ
-    ), "AZURE_AI_SEARCH_ENDPOINT の環境変数がセットされていないよ"
+    ), "AZURE_AI_SEARCH_ENDPOINT の環境変数がセットされていません"
     assert (
         "AZURE_AI_SEARCH_API_KEY" in os.environ
-    ), "AZURE_AI_SEARCH_API_KEY の環境変数がセットされていないよ"
+    ), "AZURE_AI_SEARCH_API_KEY の環境変数がセットされていません"
     assert (
         "AZURE_AI_SEARCH_INDEX_NAME" in os.environ
-    ), "AZURE_AI_SEARCH_INDEX_NAME の環境変数がセットされていないよ"
+    ), "AZURE_AI_SEARCH_INDEX_NAME の環境変数がセットされていません"
     search_endpoint = os.getenv("AZURE_AI_SEARCH_ENDPOINT")
     search_credential = AzureKeyCredential(os.getenv("AZURE_AI_SEARCH_API_KEY"))
     index_name = os.getenv("AZURE_AI_SEARCH_INDEX_NAME")
@@ -40,7 +40,7 @@ def init_azure_search():
 
 def query_index_use_user_question(user_question: str):
     """
-    貰った質問文に対して、azureの検索サービスを使って関連するドキュメントを返すよ
+    貰った質問文に対して、azureの検索サービスを使って関連するドキュメントを返す
     Args:
         user_question (str): ユーザーからの質問文
     Returns:
@@ -62,7 +62,7 @@ def query_index_use_user_question(user_question: str):
 def format_query_results(query_results):
     """
     貰った関連するドキュメントを、
-    ChatGPTのトークン数上限の限界まで繋げていき、あとはくっつけるだけの状態にするよ
+    ChatGPTのトークン数上限の限界まで繋げていき、あとは合体させるだけの状態にする
     Args:
         query_results (List[Dict[str, Any]]): 関連するドキュメント
     Returns:
@@ -91,7 +91,7 @@ def format_query_results(query_results):
 
 def calc_token_count(model: str, text: str) -> int:
     """
-    貰ったテキストのトークン数を計算するよ
+    貰ったテキストのトークン数を計算する
     Args:
         model (str): モデル名
         text (str): テキスト
@@ -108,7 +108,7 @@ def calc_token_count(model: str, text: str) -> int:
 
 def create_response(message: Tuple[str,str]) -> str:
     """
-    貰った質問文に対して、openaiのChatGPTを使って返答を生成するよ
+    貰った質問文に対して、openaiのChatGPTを使って返答を生成する
     Args:
         message (Tuple[str,str]): ユーザーからの質問文
     Returns:

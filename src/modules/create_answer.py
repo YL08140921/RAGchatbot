@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 def create_answer(question:str)->str:
     """
-    貰った質問文に対して、ChatGPTを使って返答を生成するよ
+    貰った質問文に対して、ChatGPTを使って返答を生成
     Args:
         question (str): ユーザーからの質問文
     Returns:
@@ -20,7 +20,7 @@ def create_answer(question:str)->str:
 
 def create_embedding(text: str) -> Optional[List[float]]:
     """
-    貰った質問文に対して、openai機能を使って、ベクトル化したものを返すよ
+    貰った質問文に対して、openai機能を使って、ベクトル化したものを返す
     Args:
         text (str): ユーザーからの質問文
     Returns:

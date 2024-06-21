@@ -11,8 +11,8 @@ def handle_submit(
     user_message: str, chat_history: List[Tuple[str, str]]
 ) -> Tuple[str, List[Tuple[str, str]]]:
     """
-    gradioのchatbot機能を使うために必要な関数だよ
-    質問文とそれに対する回答のリストを返すよ
+    gradioのchatbot機能を使うために必要な関数
+    質問文とそれに対する回答のリストを返す
     """
     bot_message = create_answer(user_message)
     chat_history.append((user_message, bot_message))

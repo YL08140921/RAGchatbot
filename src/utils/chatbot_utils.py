@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 def format_user_message(question:str):
     """
-    貰った質問文をChatGPTに聞く時に、リクエストの形式に合わせて整形するよ
+    貰った質問文をChatGPTに聞く時に、リクエストの形式に合わせて整形
     Args:
         question (str): ユーザーからの質問文
     Returns:
@@ -22,7 +22,7 @@ def format_user_message(question:str):
 
 def init_openai():
     """
-    openaiの機能を使うためのクライアントを作成するよ
+    openaiの機能を使うためのクライアントを作成
     Returns:
         openai_client (OpenAI): openaiのクライアント
     """

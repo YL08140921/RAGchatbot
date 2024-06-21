@@ -3,7 +3,7 @@ from src.utils.rag_utils import qury_index_use_user_question, format_query_resul
 def add_sentense(question:str)->str:
     """
     貰った質問文に対して、関連するドキュメントを検索し、
-    質問文と関連ドキュメントを1つにまとめることで、ChatGPTに聞く質問文を作るよ
+    質問文と関連ドキュメントを1つにまとめることで、ChatGPTに聞く質問文を作成
     """
     query_results = qury_index_use_user_question(question)
     source_text = format_query_results(query_results)
